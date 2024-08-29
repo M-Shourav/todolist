@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Layout from "@/components/Layout";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "Todo App",
@@ -13,7 +15,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={"font-bodyFont"}>{children}</body>
+      <body className={"font-bodyFont"}>
+        <Layout>
+          {children}
+          <Toaster
+            position="bottom-right"
+            toastOptions={{
+              duration: 3000,
+              style: {
+                background: "#363636",
+                color: "#fff",
+              },
+            }}
+          />
+        </Layout>
+      </body>
     </html>
   );
 }
