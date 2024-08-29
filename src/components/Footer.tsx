@@ -31,6 +31,7 @@ const Fotter = () => {
       >
         {footerArray?.map((item) => (
           <Link
+            key={item?.href}
             href={item?.href}
             target="blank"
             className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-600
